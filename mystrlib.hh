@@ -22,7 +22,7 @@ using namespace std;
 
 // bool endsWith(string str, string suffix)
 
-// void trim(str)
+// void trimWord(str)
 
 bool endsWith(string str, string suffix);
 

@@ -33,40 +33,50 @@ bool endsWith(string str, string suffix) {
 	return true;
 }
 
+// std::string ltrim(std::string s) {
+// 	s.erase(s.begin(), std::find_if(s.begin(), s.end(), [](char ch) {
+// 		return !std::isspace(ch);
+// 	}));
+// 	return s;
+// }
 
-string trim(string str) {
-	string result = "";
+// trim from end (in place)
+// void rtrim(std::string &s) {
+// 	s.erase(std::find_if(s.rbegin(), s.rend(), [](char ch) {
+// 		return !std::isspace(ch);
+// 	}).base(), s.end());
+// }
 
-	if (!str.length()) return str;
+// std::string trim(string s) {
+// 	s = ltrim(s);
+// 	return s;
+// }
 
-	int fcidex = -1;
-	int lcindex = -1;
-	for(int i = 0; i < str.length(); i++) {
-		if(!isspace(str[i])) {
-			if(fcidex < 0) {
-				fcidex = i;
-			} else {
-				lcindex = i;
-			}
-		}
-	}
 
-	// no whitespaces at beginning or end
-	if(fcindex < 0) return str;
+void rtrim(std::string &s) {
+	s.erase(std::find_if(s.rbegin(), s.rend(), [](char ch) {
+		return !std::isspace(ch);
+	}).base(), s.end());
 
-	// whitespace only at beginning
-	if(lcindex < 0) return str.substr(fcidex);
+}
 
-	// whitespace at beginning and end
+void ltrim(std::string &s) {
+	s.erase(s.begin(), std::find_if(s.begin(), s.end(), [](char ch) {
+		return !std::isspace(ch);
+	}));
+}
 
-	return str.substr(fcidex, lcindex);
-
+std::string trimWord(std::string s) {
+	ltrim(s);
+	rtrim(s);
+	return s;
 }
 
 
 int main() {
-	string str = "arthur";
-
-	cout << trim(str) << endl;
+	string s = "";
+	cout << "enter a string: ";
+	cin >> s;
+	cout << "." << trim(s) << "." << endl;
 }
 
