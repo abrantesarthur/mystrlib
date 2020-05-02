@@ -2,6 +2,7 @@
 #define MYSTRLIB_HH
 #include <string>
 #include <iostream>
+#include <cctype>
 
 using namespace std;
 
