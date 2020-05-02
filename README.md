@@ -7,6 +7,8 @@ A c++ library containing helpful methods to deal with strings
 [mystrlib.hh](mystrlib.hh): class definitions
 
 ## Current Methods
+`bool endsWith(string str, string suffix)` <br />
+Returns **true** if the string *str* ends with the specified suffix, which may be either a string or a character.
 
 ## Missing Methods
 
@@ -33,9 +35,6 @@ Returns **true** if *str1* and *str2* are equal discounting differences in case.
 
 `bool startsWith(string str, string prefix)` <br />
 Returns **true** if the string *str* starts with the specified prefix, which may be either a string or a character.
-
-`bool endsWith(string str, string suffix)` <br />
-Returns **true** if the string *str* ends with the specified suffix, which may be either a string or a character.
 
 `void trim(str)` <br />
 Returns a new string and after removing any whitespace characeter from the beginning and end of the argument.
